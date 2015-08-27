@@ -129,15 +129,15 @@ public class CityConnect {
 		COMMAND_TYPE commandType = determineCommandType(commandTypeString);
 
 		switch (commandType) {
-			case ADD_ROUTE:
+			case ADD_ROUTE :
 				return addRoute(userCommand);
-			case GET_DISTANCE:
+			case GET_DISTANCE :
 				return getDistance(userCommand);
-			case INVALID:
+			case INVALID :
 				return String.format(MESSAGE_INVALID_FORMAT, userCommand);
-			case EXIT:
+			case EXIT :
 				System.exit(0);
-			default:
+			default :
 				throw new Error("Unrecognized command type");
 		}
 		/*
@@ -166,7 +166,7 @@ public class CityConnect {
 	 */
 	private static COMMAND_TYPE determineCommandType(String commandTypeString) {
 		if (commandTypeString == null)
-			throw new Error("command type string cannot be null!");
+			throw new Error("Command type string cannot be null!");
 
 		if (commandTypeString.equalsIgnoreCase("addroute")) {
 			return COMMAND_TYPE.ADD_ROUTE;
@@ -319,7 +319,6 @@ public class CityConnect {
 	private static boolean isPositiveNonZeroInt(String s) {
 		try {
 			int i = Integer.parseInt(s);
-			//return true if i is greater than 0
 			return (i > 0 ? true : false);
 		} catch (NumberFormatException nfe) {
 			return false;
