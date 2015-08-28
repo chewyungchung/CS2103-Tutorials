@@ -256,7 +256,7 @@ public class CityConnect {
 			return String.format(MESSAGE_INVALID_FORMAT, userCommand);
 		}
 
-		int slotPosition = location(newStartLocation, newEndLocation);
+		int slotPosition = setLocation(newStartLocation, newEndLocation);
 
 		if (slotPosition == SLOT_UNAVAILABLE){
 			return MESSAGE_NO_SPACE;
@@ -281,7 +281,7 @@ public class CityConnect {
 	 *   newStartLocation and newEndLocation. Returns SLOT_UNAVAILABLE if
 	 *   no suitable slot is found.
 	 */
-	private static int location(String newStartLocation,
+	private static int setLocation(String newStartLocation,
 			String newEndLocation) {
 		
 		for (int i = 0; i < route.length; i++) {
